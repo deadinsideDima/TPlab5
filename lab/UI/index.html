@@ -3,107 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ветеринарная Клиника</title>
+    <title>AИС - Главная</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Заголовок -->
     <header>
-        <h1>Ветеринарная Клиника</h1>
+        <h1>AИС - Главная страница</h1>
         <nav>
             <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#add">Добавление</a></li>
-                <li><a href="#search">Поиск</a></li>
-                <li><a href="#error">Ошибка</a></li>
-                <li><a href="#admin">Администратор</a></li>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Поиск</a></li>
+                <li><a href="#">Администрирование</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Основной контент -->
     <main>
-        <!-- Главная страница -->
-        <section id="home" class="page">
-            <h2>Добро пожаловать!</h2>
-            <p>Используйте меню для навигации по системе управления ветеринарной клиникой.</p>
+        <section class="content">
+            <h2>Добро пожаловать в AИС!</h2>
+            <p>Выберите действие в меню.</p>
         </section>
-
-        <!-- Добавление данных -->
-        <section id="add" class="page hidden">
-            <h2>Добавление данных</h2>
-            <form>
-                <label for="name">Имя животного:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="type">Тип пациента:</label>
-                <select id="type" name="type">
-                    <option value="dog">Собака</option>
-                    <option value="cat">Кошка</option>
-                    <option value="other">Другой</option>
-                </select>
-
-                <label for="owner">Имя владельца:</label>
-                <input type="text" id="owner" name="owner" required>
-
-                <button type="submit">Добавить</button>
-            </form>
-        </section>
-
-        <!-- Поиск -->
-        <section id="search" class="page hidden">
-            <h2>Поиск данных</h2>
-            <form>
-                <label for="query">Введите запрос:</label>
-                <input type="text" id="query" name="query" required>
-                <button type="submit">Искать</button>
-            </form>
-        </section>
-
-        <!-- Ошибка -->
-        <section id="error" class="page hidden">
-            <h2>Ошибка</h2>
-            <p>Произошла ошибка! Попробуйте снова или обратитесь к администратору.</p>
-        </section>
-
-        <!-- Администратор -->
-        <section id="admin" class="page hidden">
-            <h2>Управление пользователями</h2>
-            <form>
-                <label for="username">Имя пользователя:</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="action">Действие:</label>
-                <select id="action" name="action">
-                    <option value="add">Добавить</option>
-                    <option value="edit">Редактировать</option>
-                    <option value="delete">Удалить</option>
-                </select>
-
-                <button type="submit">Выполнить</button>
-            </form>
+        <section id="data-list">
+            <h2>Список объектов</h2>
+            <div id="data-container"></div>
         </section>
     </main>
 
-    <!-- Футер -->
     <footer>
-        <p>&copy; 2024 Ветеринарная Клиника. Все права защищены.</p>
+        <p>© 2024 AИС. Все права защищены.</p>
     </footer>
 
-    <script>
-        // Навигация между страницами
-        const links = document.querySelectorAll('nav a');
-        const pages = document.querySelectorAll('.page');
-
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-
-                pages.forEach(page => page.classList.add('hidden'));
-                document.getElementById(targetId).classList.remove('hidden');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
