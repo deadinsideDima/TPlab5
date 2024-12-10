@@ -4,7 +4,7 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: #f8f9fa;
-    color: #113;
+    color: #333;
 }
 
 .hidden {
@@ -30,7 +30,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: red;
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
